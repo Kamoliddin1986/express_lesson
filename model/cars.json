@@ -1,0 +1,23 @@
+[
+    {
+        "id": "c0f67079-27c7-4381-a7db-f92c8c204d42",
+        "name": "412",
+        "price": "1",
+        "brand": "maskvich",
+        "userId": "dbe1deb5-821f-41c7-a603-2076855e0ee4"
+    },
+    {
+        "id": "937619fd-c46b-41cf-be14-336a88040a19",
+        "name": "Cobalt",
+        "price": "55",
+        "brand": "Ravon",
+        "userId": "7a1eb37a-591a-4ba5-8489-365f90c2de2c"
+    },
+    {
+        "id": "b1cbbaf9-7454-49e1-8a81-dc3c8ec32833",
+        "name": "spark",
+        "price": "1",
+        "brand": "Chevrolet",
+        "userId": "7a1eb37a-591a-4ba5-8489-365f90c2de2c"
+    }
+]

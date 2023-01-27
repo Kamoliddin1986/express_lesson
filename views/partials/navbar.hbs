@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">Logo</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav">
+  
+    {{#if isAuth}}
+     <li class="nav-item {{#if isCarList}} active {{/if}}"><a class="nav-link" href="/cars">Cars list</a></li>
+     <li class="nav-item {{#if isCreateCar}} active {{/if}}"><a class="nav-link" href="/cars/create_car">Create car</a></li>
+     <li class="nav-item {{#if isCreateAnimal}} active {{/if}}"><a class="nav-link" href="/animals/create_animal">Create animal</a></li>
+     <li class="nav-item {{#if isAnimalList}} active {{/if}}"><a class="nav-link" href="/animals">Animals list</a></li>
+     <li class="nav-item {{#if isFruitsList}} active {{/if}}"><a class="nav-link" href="/fruits">Fruits list</a></li>
+     <li class="nav-item {{#if isCreateFruit}} active {{/if}}"><a class="nav-link" href="/fruits/create_fruit">Create fruit</a></li>
+     {{#if isAdmin}}
+     <li class="nav-item {{#if isAdminActive}} active {{/if}}"><a class="nav-link" href="/fruits/create_fruit">admin</a></li>
+    {{/if}}
+     <li class="nav-item {{#if isLogOut}} active {{/if}}"><a class="nav-link" href="/logout">Logout</a></li>
+   {{else}}
+     <li class="nav-item {{#if isLogin}} active {{/if}}"><a class="nav-link" href="/login">Login</a></li>
+     <li class="nav-item {{#if isRegister}} active {{/if}}"><a class="nav-link" href="/user/register">Register</a></li>
+  {{/if}}
+  </ul>
+</nav>

@@ -1,0 +1,26 @@
+<h1 class="text-center">Update car</h1>
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <form action="/update_car_by_id" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name" value="{{car.name}}">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" class="form-control" name="price" value="{{car.price}}">
+            </div>
+           <div class="form-group">
+                <label for="brand">Brand:</label>
+                <input type="text" class="form-control" name="brand" value="{{car.brand}}">
+                <input type="hidden" class="form-control" name="id" value="{{car.id}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Update car</button>
+        </form> 
+        </div>
+        <div class="col-2">
+
+        </div>
+    </div>

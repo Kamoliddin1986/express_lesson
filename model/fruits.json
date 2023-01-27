@@ -1,0 +1,20 @@
+[
+    {
+        "id": "264494f7-48c2-4b46-9120-2952a12b9942",
+        "name": "Nok",
+        "color": "grey",
+        "userId": "dbe1deb5-821f-41c7-a603-2076855e0ee4"
+    },
+    {
+        "id": "2a6075c4-c467-4ed0-8c0c-702473151136",
+        "name": "Qizil Olma",
+        "color": "qizil",
+        "userId": "7a1eb37a-591a-4ba5-8489-365f90c2de2c"
+    },
+    {
+        "id": "7d290b1e-b505-4152-a7cb-43050ca75ad8",
+        "name": "Nok",
+        "color": "grey",
+        "userId": "7a1eb37a-591a-4ba5-8489-365f90c2de2c"
+    }
+]
