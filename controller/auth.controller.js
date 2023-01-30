@@ -3,6 +3,7 @@ const {uuid} = require('uuidv4')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
+const e = require('express')
 // const session = require('express-session')
 
 
@@ -79,7 +80,9 @@ const Users = {
                 id: uuid(), 
                 username: nwUser.username,
                 email:nwUser.email,
-                password: hashPsw})
+                password: hashPsw,
+                role: "User"
+            })
 
             write_file('users.json', users)
 
@@ -89,21 +92,32 @@ const Users = {
             })
         }
     },
-    LOGIN: (req, res) => {
-        let users = read_file('users.json')
+    LOGIN: async(req, res) => {
         let nwUser = req.body
-        users.forEach(user => {
-
-            if(user.username == nwUser.username && bcrypt.compare(nwUser.pwd,user.password)){
+        let user = read_file('users.json').find(user => user.username == nwUser.username)
+           try {
+               let pass = await bcrypt.compare(nwUser.pwd,user.password)
+               if(pass){
                 var token = jwt.sign({id: user.id, email: user.email}, process.env.SECRET_KEY, {
-                    expiresIn: '2h'
-                })
-                req.session.isAuthenticated = true        
-                req.session.token = token               
+                        expiresIn: '2h'
+                    })
+                    req.session.isAuthenticated = nwUser.username        
+                    req.session.token = token               
+                    
+                    res.redirect('/cars')
 
-                res.redirect('/cars')
+            }else{
+                res.redirect('/login')
+
             }
-        })
+           } catch (error) {
+            res.redirect('/login')
+           }
+               
+                
+           
+            
+        
     },
     LOGIN_PAGE: (_,res) => { 
         res.render('auth/login', {

@@ -63,7 +63,7 @@ const Animals = {
         let tok = token_verify(req.session.token)
         let update_animal_id = req.params.id
         let animals = read_file('animals.json')
-        let foundedEnim = animals.find(enim => {enim.id == update_animal_id && enim.userId == tok.id})
+        let foundedEnim = animals.find(enim => (enim.id == update_animal_id && enim.userId == tok.id))
         if(foundedEnim){
             res.render('animals/update_animal', {
                 title: 'Update Enimal',

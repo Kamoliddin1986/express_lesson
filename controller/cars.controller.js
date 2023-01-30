@@ -72,7 +72,8 @@ const Cars = {
         let tok = token_verify(req.session.token)
         let update_car_id  = req.params.id
         let cars  = read_file('cars.json')
-        let foundedCar = cars.find( car => {car.id == update_car_id && car.userId == tok.id})
+        let foundedCar = cars.find( car => (car.id == update_car_id && car.userId == tok.id))
+        console.log("Found_____",foundedCar);
         if(foundedCar){
             res.render('cars/update_car', {
                 title: 'Update car',

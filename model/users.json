@@ -3,12 +3,28 @@
         "id": "dbe1deb5-821f-41c7-a603-2076855e0ee4",
         "username": "abduraimov.k",
         "email": "kamoliddinabduraimov@gmail.com",
-        "password": "$2a$10$mRwmGEONchelR1nuBWWqhOBNnozayDCgO1AshvpQeL4YQCSMzHcby"
+        "password": "$2a$10$mRwmGEONchelR1nuBWWqhOBNnozayDCgO1AshvpQeL4YQCSMzHcby",
+        "role": "User"
     },
     {
         "id": "7a1eb37a-591a-4ba5-8489-365f90c2de2c",
         "username": "ka12",
         "email": "kamoliddin@gmail.com",
-        "password": "$2a$10$ajTDMr8jTVvmfSUA0x2nIuZgZcT0CjvtDwrcb1AZr/0Ip.VoJt9cG"
+        "password": "$2a$10$ajTDMr8jTVvmfSUA0x2nIuZgZcT0CjvtDwrcb1AZr/0Ip.VoJt9cG",
+        "role": "User"
+    },
+    {
+        "id": "03fe14d6-4160-424b-824b-5932298d27db",
+        "username": "ka123",
+        "email": "ka123@er",
+        "password": "$2a$10$S8JMNUKdbBa9ieezMWvRh.zSy5LFvLHYcy7bd4sLzluexebCicJ/a",
+        "role": "User"
+    },
+    {
+        "id": "ffe594fb-d6d3-451a-87cb-af6850e4e2a9",
+        "username": "admin",
+        "email": "admin@admin",
+        "password": "$2a$10$pAfTdFnMeFyNcsYS1GRKLevGqzM/jWy3A8iwF6gpdNFzBgkj7zz6i",
+        "role": "User"
     }
 ]

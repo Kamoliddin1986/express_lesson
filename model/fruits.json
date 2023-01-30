@@ -7,14 +7,14 @@
     },
     {
         "id": "2a6075c4-c467-4ed0-8c0c-702473151136",
-        "name": "Qizil Olma",
+        "name": "Qizil bodring",
         "color": "qizil",
         "userId": "7a1eb37a-591a-4ba5-8489-365f90c2de2c"
     },
     {
-        "id": "7d290b1e-b505-4152-a7cb-43050ca75ad8",
-        "name": "Nok",
-        "color": "grey",
-        "userId": "7a1eb37a-591a-4ba5-8489-365f90c2de2c"
+        "id": "ff3ddd18-07a6-4504-b3c6-9c65319a43b6",
+        "name": "malon",
+        "color": "red",
+        "userId": "ffe594fb-d6d3-451a-87cb-af6850e4e2a9"
     }
 ]

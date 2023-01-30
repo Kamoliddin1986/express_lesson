@@ -59,10 +59,12 @@ const Fruits = {
         res.redirect('/fruits')
     },
     UPDATE_FRUIT: (req,res) => {
+
         let tok = token_verify(req.session.token)
+
         const fruit_id = req.params.id
         const fruits = read_file('fruits.json')
-        let foundedFruit = fruits.find(fruit => {fruit.id == fruit_id && fruit.userId == fruit.userId})
+        let foundedFruit = fruits.find(fruit => (fruit.id == fruit_id && fruit.userId == tok.id))
        if(foundedFruit){
            res.render('fruits/update_fruit', {
                title: 'Update fruit',

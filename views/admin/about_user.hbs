@@ -1,0 +1,99 @@
+<h1>Users list</h1>
+<div class="container">
+    <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#if user}}
+         <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
+            <td>
+                <a href="/update_user/{{id}}"><i class="fa fa-edit text-primary mr-3"></i></a>
+                <a href="/user/{{id}}"><i class="fa fa-trash text-danger"></i></a>
+            </td>
+        </tr>
+        {{else}}
+        <h1>No Users</h1>
+        {{/if}}
+        
+    </tbody>
+</table>
+<br>
+{{#if car_posts.length}}
+<h1>Cars POSTS</h1>
+{{#each car_posts}}
+<div class="card" style="width:200px">
+    <div class="card-body"> 
+
+    <div class="card bg-danger">
+    <div class="card-body text-center">
+      <p class="card-text">
+        <h4 class="card-title">Name: {{name}}</h4>
+    <p class="card-text">Price: {{price}}</p>
+    <p class="card-text">Brand: {{brand}}</p>
+    <p> <a href="/update_car/{{id}}"><i class="fa fa-edit text-primary mr-3"></i></a>
+        <a href="/car/{{id}}"><i class="fa fa-trash text-warning"></i></a>
+    </p>
+      </p>
+    </div>
+  </div>
+    </div>
+</div>
+{{/each}} {{/if}}
+<br>
+<h1>Fruits POSTS</h1>
+{{#if fruit_posts.length}}
+{{#each fruit_posts}}
+<div class="card" style="width:200px">
+  <div class="card-body">
+    <div class="card bg-success">
+    <div class="card-body text-center">
+      <p class="card-text">
+        <h4 class="card-title">Name: {{name}}</h4>
+    <p class="card-text">Color: {{color}}</p>
+
+    <p> <a href="/update_fruit/{{id}}"><i class="fa fa-edit text-warning mr-3"></i></a>
+        <a href="/fruit/{{id}}"><i class="fa fa-trash text-danger"></i></a>
+    </p>
+      </p>
+    </div>
+  </div>
+    
+  </div>
+</div>
+{{/each}} {{/if}}
+
+<br>
+<h1>Animals POSTS</h1>
+{{#if fruit_posts.length}}
+{{#each animal_posts}}
+<div class="card" style="width:200px">
+  <div class="card-body">
+    <div class="card bg-warning">
+    <div class="card-body text-center">
+      <p class="card-text">
+        <h4 class="card-title">Name: {{name}}</h4>
+    <p class="card-text">Type: {{type}}</p>
+
+    <p> <a href="/update_animal/{{id}}"><i class="fa fa-edit text-primary mr-3"></i></a>
+        <a href="/animal/{{id}}"><i class="fa fa-trash text-danger"></i></a>
+    </p>
+      </p>
+    </div>
+  </div>
+    
+  </div>
+</div>
+{{/each}} {{/if}}
+
+</div>

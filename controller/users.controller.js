@@ -5,7 +5,11 @@ let users = read_file('users.json')
 const Users = {
     GET: (_,res) => {
         let users = read_file('users.json')
-        res.send(users)
+        res.render('admin/users_list', {
+            title: 'Users',
+            isAdminActive: true,
+            users
+        })
     },
     POST: async(req, res) => {
         const nwUser = req.body
@@ -45,6 +49,21 @@ const Users = {
         })
         await write_file('users.json', users)
         res.send('user deleted!')
+    },
+    USER_ALL_POSTS: (req,res) => {
+        let User_id = req.params.id
+        let user = read_file("users.json").find(user => user.id == User_id)
+        let car_posts = read_file('cars.json').filter(car => car.userId == User_id)
+        let fruit_posts = read_file('fruits.json').filter(fruit => fruit.userId == User_id)
+        let animal_posts = read_file('animals.json').filter(animal => animal.userId == User_id)
+        res.render('admin/about_user', {
+            title: 'about user',
+            user,
+            car_posts,
+            fruit_posts,
+            animal_posts
+        }
+        )
     }
 }
 
