@@ -1,40 +1,53 @@
-require('dotenv').config()
+
 const express = require('express')
-const exphbs = require('express-handlebars')
+
+const swaggerJsDoc = require('swagger-jsdoc')
+const cors = require("cors")
+const swaggerUI = require('swagger-ui-express')
 const carsRouter = require('./router/cars.router')
 const animalsRouter = require('./router/animals.router')
 const fruitsRouter = require('./router/fruits.router')
 const usersRouter = require('./router/users.router')
-const authController = require('./router/auth.router')
-const session = require('express-session')
-const middleWare = require('./middleware/variable')
 
 
-const app = express() 
 
-const hbs = exphbs.create({
-    defaultLayout: 'main',
-    extname: 'hbs'
-});
 
-app.engine('hbs',hbs.engine)
-app.set('view engine', 'hbs');
-app.set('views', 'views');
+
+
+const options = {
+    definition: {
+     openapi:"3.0.0",
+     info: {
+         title: "My project",
+         version: "1.0.0",
+         description: 'My Project API Information'
+        },
+        servers: [
+            {
+                url: "http://localhost:4000"
+            },
+        ],
+    },
+    apis: ["./router/*.js"]
+ }
+ 
+ const swaggerDocs = swaggerJsDoc(options);
+ const app = express() 
+ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocs));
+ app.use(cors());
+ 
+
+
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
-app.use(session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false
-}))
-app.use(middleWare)
+
+
 
 
 app.use(carsRouter) 
-app.use(animalsRouter)
 app.use(fruitsRouter)
+app.use(animalsRouter)
 app.use(usersRouter)
-app.use(authController)
+
 
 
 

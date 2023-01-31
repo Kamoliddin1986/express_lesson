@@ -3,28 +3,30 @@
         "id": "c0f67079-27c7-4381-a7db-f92c8c204d42",
         "name": "412",
         "price": "1",
-        "brand": "maskvich",
-        "userId": "dbe1deb5-821f-41c7-a603-2076855e0ee4"
+        "brand": "maskvich"
     },
     {
         "id": "b1cbbaf9-7454-49e1-8a81-dc3c8ec32833",
         "name": "spark0",
         "price": "1",
-        "brand": "Chevrolet",
-        "userId": "7a1eb37a-591a-4ba5-8489-365f90c2de2c"
+        "brand": "Chevrolet"
     },
     {
         "id": "b7685c28-808b-445b-b570-8f68175719a0",
         "name": "tiko",
         "price": "1",
-        "brand": "daewoo",
-        "userId": "ffe594fb-d6d3-451a-87cb-af6850e4e2a9"
+        "brand": "daewoo"
     },
     {
-        "id": "43fbda7d-c5db-4b7f-8ee3-7ad7a45c2c60",
-        "name": "damas",
+        "id": "4f614fba-eb0e-4d30-9019-fb8108e4404e",
+        "name": "trakker",
         "price": "2",
-        "brand": "daewoo",
-        "userId": "ffe594fb-d6d3-451a-87cb-af6850e4e2a9"
+        "brand": "chevrolet"
+    },
+    {
+        "id": "3307b691-afaf-40a4-a8a4-1059a6691a95",
+        "name": "Rav4",
+        "price": "2",
+        "brand": "toyota"
     }
 ]

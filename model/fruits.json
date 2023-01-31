@@ -1,20 +1,17 @@
 [
     {
         "id": "264494f7-48c2-4b46-9120-2952a12b9942",
-        "name": "Nok",
-        "color": "grey",
-        "userId": "dbe1deb5-821f-41c7-a603-2076855e0ee4"
-    },
-    {
-        "id": "2a6075c4-c467-4ed0-8c0c-702473151136",
-        "name": "Qizil bodring",
-        "color": "qizil",
-        "userId": "7a1eb37a-591a-4ba5-8489-365f90c2de2c"
+        "name": "Banan",
+        "color": "grey"
     },
     {
         "id": "ff3ddd18-07a6-4504-b3c6-9c65319a43b6",
         "name": "malon",
-        "color": "red",
-        "userId": "ffe594fb-d6d3-451a-87cb-af6850e4e2a9"
+        "color": "red"
+    },
+    {
+        "id": "61318d39-bb0a-4616-a866-f8ea1ed4d914",
+        "name": "malon",
+        "color": "red"
     }
 ]

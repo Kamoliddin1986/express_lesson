@@ -26,5 +26,11 @@
         "email": "admin@admin",
         "password": "$2a$10$pAfTdFnMeFyNcsYS1GRKLevGqzM/jWy3A8iwF6gpdNFzBgkj7zz6i",
         "role": "User"
+    },
+    {
+        "id": 5,
+        "username": "ka12345",
+        "email": "ka12345@er",
+        "password": "12345"
     }
 ]
