@@ -12,10 +12,10 @@
      <li class="nav-item {{#if isAnimalList}} active {{/if}}"><a class="nav-link" href="/animals">Animals list</a></li>
      <li class="nav-item {{#if isFruitsList}} active {{/if}}"><a class="nav-link" href="/fruits">Fruits list</a></li>
      <li class="nav-item {{#if isCreateFruit}} active {{/if}}"><a class="nav-link" href="/fruits/create_fruit">Create fruit</a></li>
-
+    {{#if isAdmin}}
      <li class="nav-item {{#if isAdminActive}} active {{/if}}"><a class="nav-link" href="/users">admin</a></li>
-
-     <li class="nav-item {{#if isLogOut}} active {{/if}}"><a class="nav-link" href="/logout">Logout</a></li>
+    {{/if}}
+     <li class="nav-item {{#if isLogOut}} active {{/if}}"><a class="nav-link" href="/logout">Logout user: {{isAuth}}</a></li>
    {{else}}
      <li class="nav-item {{#if isLogin}} active {{/if}}"><a class="nav-link" href="/login">Login</a></li>
      <li class="nav-item {{#if isRegister}} active {{/if}}"><a class="nav-link" href="/user/register">Register</a></li>

@@ -7,6 +7,7 @@ const e = require('express')
 // const session = require('express-session')
 
 
+
 const Users = {
     GET: (_,res) => {
         let users = read_file('users.json')
@@ -95,19 +96,20 @@ const Users = {
     LOGIN: async(req, res) => {
         let nwUser = req.body
         let user = read_file('users.json').find(user => user.username == nwUser.username)
-           try {
-               let pass = await bcrypt.compare(nwUser.pwd,user.password)
-               if(pass){
+        try {
+            let pass = await bcrypt.compare(nwUser.pwd,user.password)
+            if(pass){
                 var token = jwt.sign({id: user.id, email: user.email}, process.env.SECRET_KEY, {
-                        expiresIn: '2h'
-                    })
-                    req.session.isAuthenticated = nwUser.username        
-                    req.session.token = token               
+                    expiresIn: '2h'
+                })
+                req.session.isAuthenticated = nwUser.username        
+                req.session.token = token               
+                console.log(req.session.isAuthenticated);
                     
-                    res.redirect('/cars')
+                   return res.redirect('/cars')
 
             }else{
-                res.redirect('/login')
+                return res.redirect('/login')
 
             }
            } catch (error) {

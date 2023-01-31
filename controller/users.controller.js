@@ -64,6 +64,14 @@ const Users = {
             animal_posts
         }
         )
+    },
+    UPDATE_USER: (req,res) => {
+        let id = req.params.id
+        let foundedUsers = read_file('users.json').find(user => user.id == id)
+        res.render('admin/update_user', {
+            title: 'update user',
+            foundedUsers
+        })
     }
 }
 

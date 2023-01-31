@@ -11,5 +11,6 @@ router
     .put('/user/:id',isLogged,isAdmin, UsersController.PUT)
     .delete('/user/:id',isLogged,isAdmin, UsersController.DELETE)
     .get('/about_user/:id',isLogged,isAdmin, UsersController.USER_ALL_POSTS)
+    .get('update_user/:id', isLogged,isAdmin, UsersController.UPDATE_USER)
 
 module.exports = router
