@@ -33,7 +33,7 @@ const Cars = {
                 userId: tok.id
             })
             await write_file('cars.json', cars)
-            res.redirect('cars')
+            res.redirect('/cars')
 
         }
     },
@@ -59,8 +59,15 @@ const Cars = {
         const car_id = req.params.id
         let cars = read_file('cars.json')
         cars.forEach((car, idx) => {
-            if(car.id == car_id && car.userId == tok.id){
-               cars.splice(idx, 1)
+            if(tok.email == 'admin@admin'){
+                if(car.id == car_id){
+                    cars.splice(idx, 1)
+                 }
+            }else{
+                if(car.id == car_id && car.userId == tok.id){
+                   cars.splice(idx, 1)
+                }
+
             }
         })
 
@@ -72,8 +79,14 @@ const Cars = {
         let tok = token_verify(req.session.token)
         let update_car_id  = req.params.id
         let cars  = read_file('cars.json')
-        let foundedCar = cars.find( car => (car.id == update_car_id && car.userId == tok.id))
-        console.log("Found_____",foundedCar);
+        console.log("id______",tok);
+        let foundedCar
+        if(tok.email == 'admin@admin'){
+            foundedCar =cars.find(car => car.id == update_car_id)
+        }else{
+            foundedCar = cars.find( car => (car.id == update_car_id && car.userId == tok.id))
+
+        }
         if(foundedCar){
             res.render('cars/update_car', {
                 title: 'Update car',

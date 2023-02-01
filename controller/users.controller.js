@@ -1,10 +1,10 @@
-const {read_file, write_file } = require('../fs/fs_api')
+const {read_file, write_file,token_verify } = require('../fs/fs_api')
 const Cars = require('./cars.controller')
 
 let users = read_file('users.json')
 const Users = {
     GET: (_,res) => {
-        let users = read_file('users.json')
+        let users = read_file('users.json').filter(user => user.username!='admin')
         res.render('admin/users_list', {
             title: 'Users',
             isAdminActive: true,
@@ -24,6 +24,7 @@ const Users = {
         res.send('User created')
     },
     PUT: async(req, res) => {
+        
         const user_id = req.params.id
         const nwUser = req.body
 
@@ -64,6 +65,36 @@ const Users = {
             animal_posts
         }
         )
+    },
+    RENDER_USER_UPDATE_FORM: (req,res) => {
+        let user = read_file('users.json').find(user => user.id == req.params.id)
+        res.render('admin/user_update_form', {
+            title: 'user update form',
+            user
+        })
+    },
+    ADMIN_UPDATE_USER: (req,res) => {
+        
+        const nwUser = req.body
+        let existing_username_or_email = false
+
+        let users = read_file('users.json')
+        if(users.find(user => (user.id !=nwUser.id && (user.username == nwUser.username || user.email == nwUser.email)))){
+            existing_username_or_email = true
+        }
+        if(!existing_username_or_email){
+            users.forEach(user => {
+                if(user.id == nwUser.id){
+                    user.username = nwUser.username || user.username
+                    user.email = nwUser.email || user.email
+                    user.role = nwUser.role || user.role
+                }
+            })
+            write_file('users.json',users)
+            return res.redirect('/users')
+        }else{
+            res.send('Username or email is exists!')
+        }
     }
 }
 

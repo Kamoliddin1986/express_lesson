@@ -1,7 +1,7 @@
 [
     {
         "id": "dbe1deb5-821f-41c7-a603-2076855e0ee4",
-        "username": "abduraimov.k",
+        "username": "ka12456",
         "email": "kamoliddinabduraimov@gmail.com",
         "password": "$2a$10$mRwmGEONchelR1nuBWWqhOBNnozayDCgO1AshvpQeL4YQCSMzHcby",
         "role": "User"
@@ -25,6 +25,13 @@
         "username": "admin",
         "email": "admin@admin",
         "password": "$2a$10$pAfTdFnMeFyNcsYS1GRKLevGqzM/jWy3A8iwF6gpdNFzBgkj7zz6i",
+        "role": "User"
+    },
+    {
+        "id": "f1b14a6d-1fe1-40ca-96e5-e2b47d4d607e",
+        "username": "ka1234",
+        "email": "ka1234@fr",
+        "password": "$2a$10$.XmmWbClnKVduhxJSBfR8Oayaq6Y.JCdmzj.o3a5AbTFmoObgLQya",
         "role": "User"
     }
 ]
